@@ -16,4 +16,15 @@ object AppModule {
         return BuscarStrings(context)
     }
 
+    @Provides
+    fun providesMainRepository(@ApplicationContext context: Context): MainRepository {
+        return MainRepository(BuscarStrings(context))
+    }
+
+    @Provides
+    fun providesLista(): List<String> {
+        return arrayListOf("Arthur", "Alan", "Catia", "Adriano", "Danielle", "Alexssander")
+    }
+
+
 }
